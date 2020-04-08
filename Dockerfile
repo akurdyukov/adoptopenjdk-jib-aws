@@ -25,7 +25,7 @@ RUN mkdir -p /root/.docker \
 ## Install awscli
 ENV AWSCLI_VERSION="1.18.35"
 
-RUN apk -Uuv add groff less python py-pip \
+RUN apk -Uuv add groff less python py-pip jq \
     && pip install awscli==${AWSCLI_VERSION} \
     && apk --purge -v del py-pip \
     && rm /var/cache/apk/*
